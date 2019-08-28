@@ -1,13 +1,6 @@
 # ubuntu_init_setup
 ## ubuntu 16.04（vmware）  
 1. 安装vmware-tools  
-
-    void main()    
-    {    
-    printf("Hello, Markdown.");    
-    }    
-
-
 ```shell
   sudo ./vmware-install.pl
 ```
