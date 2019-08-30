@@ -25,10 +25,18 @@ landscape-client-ui-install landscape 远程控制软件
 deja-dup 备份  
 onboard 屏幕键盘  
 ```shell
-sudo apt purge libreoffice-common  
-sudo apt purge unity-webapps-common  
-sudo apt purge thunderbird totem rhythmbox empathy brasero simple-scan gnome-mahjongg aisleriot gnome-mines cheese gnome-sudoku transmission-common gnome-orca webbrowser-app landscape-client-ui-install 
-sudo apt purge deja-dup onborad
+sudo apt remove thunderbird totem rhythmbox empathy brasero simple-scan gnome-mahjongg aisleriot gnome-mines cheese transmission-common gnome-orca webbrowser-app gnome-sudoku  landscape-client-ui-install  onboard deja-dup
+```
+可选删除
+```shell
+sudo apt-get remove libreoffice* #自带office,WPS代替
+sudo apt-get remove yelp #帮助
+sudo apt-get remove blue* #蓝牙
+sudo apt-get remove gnome-software #软件中心 apt够用 
+sudo apt-get remove unity #换gnome
+sudo apt-get remove gnome-system-monitor #系统监视器
+sudo apt-get remove gnome-system-log #日志查看器
+sudo apt autoremove
 ```
 3. 更换阿里源
 ```shell
@@ -61,7 +69,22 @@ deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted multiv
 deb http://mirrors.aliyun.com/ubuntu/ xenial-security universe
 deb http://mirrors.aliyun.com/ubuntu/ xenial-security multiverse
 ```
-4. 安装chrome，卸载Firefox
+4. 必备软件
+```shell
+sudo apt-get install unrar #安装unrar程序
+sudo apt-get install exfat-fuse #Ubuntu默认不支持exFat，需要手动安装exfat的支持
+sudo apt-get install openssh-server #安装之后，就可以在Win下用ssh工具远程登陆了，当然也多了一个安全隐患，如果不想远程登陆本机的话，可以不装openssh-server
+sudo apt-get install axel #多线程下载神器
+sudo apt-get install apt-fast #用 axel 来加速 apt-get 软件安装的脚本,由于是多线程下载，所以加速效果还是很明显的。使用apt-fast 命令替代原apt-get 命令即可
+sudo apt-get install git #git
+sudo apt-get install vim #神器
+sudo apt-get install pip #pip
+sudo apt-get install shutter #截图
+sudo apt-get install unity-tweak-tool #配置主题
+sudo apt-get install wps-office 
+sudo apt-get install gnome-mpv #视频播放
+```
+安装chrome，卸载Firefox
 ```shell
 sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -
@@ -83,4 +106,5 @@ sudo add-apt-repository ppa:gnome3-team/gnome3
 sudo apt update
 sudo apt dist-upgrade
 sudo apt install gnome gnome-shell
+sudo apt-get install gnome-tweak-tool
 ```
