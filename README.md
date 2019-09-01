@@ -107,4 +107,27 @@ sudo apt update
 sudo apt dist-upgrade
 sudo apt install gnome gnome-shell
 sudo apt-get install gnome-tweak-tool
+# reconfigure (ubuntu16 的unity登陆界面可能会有问题)
+sudo dpkg-reconfigure gdm3
+```
+8. 美化
+```shell
+sudo add-apt-repository ppa:noobslab/themes
+sudo apt-get update
+sudo apt-get install flatabulous-theme
+
+sudo add-apt-repository ppa:noobslab/icons
+sudo apt-get update
+sudo apt-get install ultra-flat-icons
+```
+9. 配置oh-my-zsh
+```shell
+sudo apt install zsh
+sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+```
+10.配置conky
+```shell
+sudo apt install conky-all
+
 ```
