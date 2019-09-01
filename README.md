@@ -130,4 +130,8 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/maste
 ```shell
 sudo apt install conky-all
 
+sudo apt-add-repository -y ppa:teejee2008/ppa
+sudo apt update
+sudo apt install conky-manager
+
 ```
